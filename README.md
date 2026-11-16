@@ -12,8 +12,6 @@ The source of truth for SportHub's visual identity: approved marks, raster expor
 
 Run `npm run check` to verify required assets, font licenses, color tokens, and PNG export dimensions.
 
-Run `npm run check` to verify required assets, font licenses, color tokens, and PNG export dimensions.
-
 ## Repository layout
 
 ```text
