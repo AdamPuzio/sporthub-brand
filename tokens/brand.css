@@ -1,0 +1,62 @@
+/* SportHub brand tokens. See docs/typography-and-color.md for usage and contrast guidance. */
+@font-face {
+  font-family: 'Barlow';
+  src: url('../assets/brand/fonts/barlow-700-latin.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Barlow';
+  src: url('../assets/brand/fonts/barlow-800-latin.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/brand/fonts/inter-latin-variable.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+:root {
+  --sh-dugout-navy: #0B1F3A;
+  --sh-optic-yellow: #E8E337;
+  --sh-chalk: #F7F5EF;
+  --sh-stitch-red: #C8371F;
+  --sh-field-blue: #1C3A66;
+  --sh-outfield-green: #2E7D4F;
+  --sh-infield-clay: #B5651D;
+  --sh-slate: #5B6B82;
+  --sh-white: #FFFFFF;
+
+  --sh-font-heading: 'Barlow', ui-sans-serif, system-ui, sans-serif;
+  --sh-font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  --sh-background: var(--sh-chalk);
+  --sh-foreground: var(--sh-dugout-navy);
+  --sh-card: var(--sh-white);
+  --sh-primary: var(--sh-dugout-navy);
+  --sh-primary-foreground: var(--sh-chalk);
+  --sh-muted-foreground: var(--sh-slate);
+  --sh-destructive: var(--sh-stitch-red);
+  --sh-success: var(--sh-outfield-green);
+  --sh-info: var(--sh-field-blue);
+  --sh-opportunity: var(--sh-infield-clay);
+}
+
+[data-theme='dark'] {
+  --sh-background: var(--sh-dugout-navy);
+  --sh-foreground: var(--sh-chalk);
+  --sh-card: var(--sh-field-blue);
+  --sh-primary: var(--sh-chalk);
+  --sh-primary-foreground: var(--sh-dugout-navy);
+  --sh-muted-foreground: hsl(45 20% 84%);
+  --sh-destructive: hsl(8.5 83% 69.2%);
+  --sh-success: hsl(137.4 34.6% 58%);
+  --sh-info: hsl(215.7 64% 71%);
+}

@@ -1,0 +1,39 @@
+{
+  "brand": {
+    "dugoutNavy": "#0B1F3A",
+    "opticYellow": "#E8E337",
+    "chalk": "#F7F5EF",
+    "stitchRed": "#C8371F",
+    "fieldBlue": "#1C3A66",
+    "outfieldGreen": "#2E7D4F",
+    "infieldClay": "#B5651D",
+    "slate": "#5B6B82",
+    "white": "#FFFFFF"
+  },
+  "semantic": {
+    "light": {
+      "background": "brand.chalk",
+      "foreground": "brand.dugoutNavy",
+      "card": "brand.white",
+      "primary": "brand.dugoutNavy",
+      "primaryForeground": "brand.chalk",
+      "mutedForeground": "brand.slate",
+      "destructive": "brand.stitchRed",
+      "success": "brand.outfieldGreen",
+      "info": "brand.fieldBlue",
+      "opportunity": "brand.infieldClay"
+    },
+    "dark": {
+      "background": "brand.dugoutNavy",
+      "foreground": "brand.chalk",
+      "card": "brand.fieldBlue",
+      "primary": "brand.chalk",
+      "primaryForeground": "brand.dugoutNavy",
+      "mutedForeground": "hsl(45 20% 84%)",
+      "destructive": "hsl(8.5 83% 69.2%)",
+      "success": "hsl(137.4 34.6% 58%)",
+      "info": "hsl(215.7 64% 71%)",
+      "opportunity": "brand.infieldClay"
+    }
+  }
+}

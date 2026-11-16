@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 590 154" role="img" aria-labelledby="title">
+  <title id="title">SportHub Softball</title>
+  <style>
+    @font-face{font-family:BarlowBrand;src:url("./fonts/barlow-800-latin.woff2") format("woff2");font-weight:800;font-display:block}
+    @font-face{font-family:BarlowBrand;src:url("./fonts/barlow-700-latin.woff2") format("woff2");font-weight:700;font-display:block}
+  </style>
+  <text x="4" y="91" font-family="BarlowBrand, Barlow, Arial, sans-serif" font-size="104" font-weight="800" letter-spacing="-4">
+    <tspan fill="#0B1F3A">Sport</tspan><tspan fill="#5B6B82">Hub</tspan>
+  </text>
+  <text x="295" y="145" text-anchor="middle" font-family="BarlowBrand, Barlow, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="7" fill="#C8371F">SOFTBALL</text>
+</svg>

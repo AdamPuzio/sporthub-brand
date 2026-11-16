@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="title">
+  <title id="title">SportHub</title>
+  <style>
+    @font-face{font-family:BarlowBrand;src:url("./fonts/barlow-800-latin.woff2") format("woff2");font-weight:800;font-display:block}
+  </style>
+  <rect x="3" y="3" width="114" height="114" rx="25" fill="#0B1F3A"/>
+  <rect x="17" y="17" width="86" height="86" rx="21" fill="none" stroke="#5B6B82" stroke-width="2" opacity=".55"/>
+  <text x="60" y="82" text-anchor="middle" font-family="BarlowBrand, Barlow, Arial, sans-serif" font-size="58" font-weight="800" letter-spacing="-4">
+    <tspan fill="#F7F5EF">S</tspan><tspan fill="#E8E337">H</tspan>
+  </text>
+</svg>

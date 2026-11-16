@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 590 120" role="img" aria-labelledby="title">
+  <title id="title">SportHub</title>
+  <style>
+    @font-face{font-family:BarlowBrand;src:url("./fonts/barlow-800-latin.woff2") format("woff2");font-weight:800;font-display:block}
+  </style>
+  <text x="4" y="94" font-family="BarlowBrand, Barlow, Arial, sans-serif" font-size="104" font-weight="800" letter-spacing="-4">
+    <tspan fill="#FFFFFF">Sport</tspan><tspan fill="#E8E337">Hub</tspan>
+  </text>
+</svg>

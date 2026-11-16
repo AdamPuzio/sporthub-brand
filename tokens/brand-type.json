@@ -1,0 +1,17 @@
+{
+  "families": {
+    "display": {
+      "name": "Barlow",
+      "files": ["../assets/brand/fonts/barlow-700-latin.woff2", "../assets/brand/fonts/barlow-800-latin.woff2"],
+      "weights": [700, 800],
+      "recommendedWeight": 800
+    },
+    "body": {
+      "name": "Inter",
+      "file": "../assets/brand/fonts/inter-latin-variable.woff2",
+      "weights": [100, 900],
+      "recommendedWeights": {"body": 400, "emphasis": 600}
+    }
+  },
+  "fallbacks": ["ui-sans-serif", "system-ui", "sans-serif"]
+}

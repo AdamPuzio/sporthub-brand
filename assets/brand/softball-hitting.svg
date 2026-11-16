@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="title">
+  <title id="title">Softball hitting</title>
+  <circle cx="38" cy="19" r="12" fill="#0B1F3A"/>
+  <path d="m39 34-7 32-19 39m19-39 24 33m-23-44 19-16 17-12" fill="none" stroke="#0B1F3A" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="m68 28 31-23" fill="none" stroke="#E8E337" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="14" cy="41" r="6" fill="#E8E337"/>
+</svg>
