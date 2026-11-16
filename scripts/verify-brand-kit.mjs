@@ -18,6 +18,8 @@ const required = [
   'assets/brand/fonts/OFL-Barlow.txt',
   'assets/brand/fonts/OFL-Inter.txt',
   'assets/favicon.svg',
+  'BRAND-BOARD.md',
+  'exports/palette-swatches.svg',
   'tokens/brand-colors.json',
   'tokens/brand-type.json',
   'tokens/brand.css',
@@ -31,6 +33,11 @@ for (const file of required) {
   const fullPath = path.join(root, file)
   assert.ok(existsSync(fullPath), `Missing required brand-kit asset: ${file}`)
   assert.ok(statSync(fullPath).size > 0, `Brand-kit asset is empty: ${file}`)
+}
+
+const board = readFileSync(path.join(root, 'BRAND-BOARD.md'), 'utf8')
+for (const [, assetPath] of board.matchAll(/!\[[^\]]*\]\(([^)]+)\)/g)) {
+  assert.ok(existsSync(path.join(root, assetPath)), `Brand board references a missing image: ${assetPath}`)
 }
 
 const colors = JSON.parse(readFileSync(path.join(root, 'tokens/brand-colors.json'), 'utf8'))
@@ -60,4 +67,4 @@ for (const [file, [width, height]] of Object.entries(expectedPngSizes)) {
 }
 
 assert.equal(existsSync(path.join(root, 'input/SportHub Brand Board.pdf')), false, 'Private source board must not be copied')
-console.log('✓ Brand sources, licenses, tokens, and PNG export dimensions are present and consistent.')
+console.log('✓ Brand board links, sources, licenses, tokens, and PNG export dimensions are present and consistent.')

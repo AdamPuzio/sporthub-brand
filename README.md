@@ -4,6 +4,7 @@ The source of truth for SportHub's visual identity: approved marks, raster expor
 
 ## Start here
 
+- [Brand board](BRAND-BOARD.md)
 - [Brand usage guidelines](docs/usage-guidelines.md)
 - [Asset catalog and export sizes](docs/asset-catalog.md)
 - [Color and typography tokens](docs/typography-and-color.md)
