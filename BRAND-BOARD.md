@@ -18,7 +18,9 @@ A visual quick reference for SportHub's approved marks, color, typography, and s
 | --- | --- |
 | ![SportHub Softball lockup](exports/png/sporthub-softball-lockup.png) | ![SportHub SH monogram](exports/png/sh-monogram.png) |
 
-Use the SVG originals in `assets/brand/` whenever possible. The logo PNG exports in [`exports/png/`](exports/png/) have transparent backgrounds; the reversed mark is previewed on Navy here so its white lettering remains visible. The reversed wordmark uses **Optic Yellow** for “Hub”; both monogram marks use Optic Yellow for “H.”
+Use the font-independent outlined SVGs in [`exports/svg/`](exports/svg/) when handing logos to design tools or vendors. Editable, font-based originals remain in `assets/brand/`. The logo PNG exports in [`exports/png/`](exports/png/) have transparent backgrounds; the reversed mark is previewed on Navy here so its white lettering remains visible. The reversed wordmark uses **Optic Yellow** for “Hub”; both monogram marks use Optic Yellow for “H.”
+
+**Outlined logo files:** [Primary wordmark](exports/svg/sporthub-wordmark.svg) · [Reversed wordmark](exports/svg/sporthub-wordmark-reversed.svg) · [Softball lockup](exports/svg/sporthub-softball-lockup.svg) · [SH monograms](exports/svg/sh-monogram.svg) and [reversed](exports/svg/sh-monogram-reversed.svg) · [Favicon](exports/svg/favicon.svg)
 
 ## Palette
 

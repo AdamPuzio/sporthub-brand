@@ -19,6 +19,13 @@ const required = [
   'assets/brand/fonts/OFL-Barlow.txt',
   'assets/brand/fonts/OFL-Inter.txt',
   'assets/favicon.svg',
+  'scripts/outline-brand-logos.swift',
+  'exports/svg/sporthub-wordmark.svg',
+  'exports/svg/sporthub-wordmark-reversed.svg',
+  'exports/svg/sporthub-softball-lockup.svg',
+  'exports/svg/sh-monogram.svg',
+  'exports/svg/sh-monogram-reversed.svg',
+  'exports/svg/favicon.svg',
   'BRAND-BOARD.md',
   'exports/palette-swatches.svg',
   'tokens/brand-colors.json',
@@ -47,6 +54,20 @@ const css = readFileSync(path.join(root, 'tokens/brand.css'), 'utf8')
 for (const [name, hex] of Object.entries(colors.brand)) {
   const cssName = name.replace(/[A-Z]/g, letter => `-${letter.toLowerCase()}`)
   assert.ok(css.includes(`--sh-${cssName}: ${hex};`), `CSS color token does not match JSON for ${name}`)
+}
+
+for (const file of [
+  'exports/svg/sporthub-wordmark.svg',
+  'exports/svg/sporthub-wordmark-reversed.svg',
+  'exports/svg/sporthub-softball-lockup.svg',
+  'exports/svg/sh-monogram.svg',
+  'exports/svg/sh-monogram-reversed.svg',
+  'exports/svg/favicon.svg',
+]) {
+  const svg = readFileSync(path.join(root, file), 'utf8')
+  assert.match(svg, /<svg\b/, `${file} should be an SVG document`)
+  assert.match(svg, /<path\b/, `${file} should contain outlined vector paths`)
+  assert.doesNotMatch(svg, /<text\b|@font-face|font-family\s*=|url\(/i, `${file} should not depend on external fonts or resources`)
 }
 
 function firstPixelAlpha(data, file) {
@@ -92,4 +113,4 @@ for (const file of ['exports/png/sporthub-wordmark.png', 'exports/png/sporthub-w
 }
 
 assert.equal(existsSync(path.join(root, 'input/SportHub Brand Board.pdf')), false, 'Private source board must not be copied')
-console.log('✓ Brand board links, sources, licenses, tokens, PNG dimensions, and transparent logo exports are valid.')
+console.log('✓ Brand board links, font-independent SVGs, sources, licenses, tokens, PNG dimensions, and transparent logo exports are valid.')

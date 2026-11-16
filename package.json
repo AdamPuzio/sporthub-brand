@@ -4,6 +4,7 @@
   "private": false,
   "description": "SportHub brand identity assets, tokens, and usage guidelines",
   "scripts": {
-    "check": "node scripts/verify-brand-kit.mjs"
+    "check": "node scripts/verify-brand-kit.mjs",
+    "outline": "swift scripts/outline-brand-logos.swift"
   }
 }

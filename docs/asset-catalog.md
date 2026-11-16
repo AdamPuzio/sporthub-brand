@@ -2,6 +2,21 @@
 
 Original vector and source assets live in [`assets/brand/`](../assets/brand/). Raster exports live in [`exports/png/`](../exports/png/).
 
+## Font-independent outlined SVGs
+
+Use the files in [`exports/svg/`](../exports/svg/) when placing a logo in a design tool, print workflow, or other environment where the brand fonts may not be installed. These SVGs contain vector paths rather than live text and do not load external files.
+
+| Asset | Format | Recommended use |
+| --- | --- | --- |
+| `exports/svg/sporthub-wordmark.svg` | Outlined SVG | Primary mark on light backgrounds |
+| `exports/svg/sporthub-wordmark-reversed.svg` | Outlined SVG | White/Optic Yellow mark on dark backgrounds |
+| `exports/svg/sporthub-softball-lockup.svg` | Outlined SVG | Softball product lockup |
+| `exports/svg/sh-monogram.svg` | Outlined SVG | App icon and compact light-surface use |
+| `exports/svg/sh-monogram-reversed.svg` | Outlined SVG | Compact mark for dark surfaces |
+| `exports/svg/favicon.svg` | Outlined SVG | Font-independent favicon source |
+
+The originals in `assets/brand/` remain the editable, font-based source files. Keep them alongside the supplied Barlow fonts when editing text or preparing future variants. Regenerate outlined exports on macOS with `npm run outline` after approved source changes.
+
 ## Marks
 
 | Asset | Format | Recommended use |
@@ -15,7 +30,7 @@ Original vector and source assets live in [`assets/brand/`](../assets/brand/). R
 
 ## Raster derivatives
 
-The PNG exports are generated from the SVG masters with transparency preserved. Prefer the SVG master where supported.
+The PNG exports preserve transparency. Prefer an outlined SVG where vector output is supported; use PNG derivatives when a consuming tool cannot render SVG.
 
 | Export | Size | Use |
 | --- | ---: | --- |
