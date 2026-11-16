@@ -1,0 +1,9 @@
+{
+  "name": "sporthub-brand",
+  "version": "1.0.0",
+  "private": false,
+  "description": "SportHub brand identity assets, tokens, and usage guidelines",
+  "scripts": {
+    "check": "node scripts/verify-brand-kit.mjs"
+  }
+}

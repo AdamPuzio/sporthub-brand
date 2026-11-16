@@ -10,6 +10,10 @@ The source of truth for SportHub's visual identity: approved marks, raster expor
 - [Licensing and asset ownership](docs/licensing.md)
 - [Brand preview sheet](preview/index.html)
 
+Run `npm run check` to verify required assets, font licenses, color tokens, and PNG export dimensions.
+
+Run `npm run check` to verify required assets, font licenses, color tokens, and PNG export dimensions.
+
 ## Repository layout
 
 ```text
