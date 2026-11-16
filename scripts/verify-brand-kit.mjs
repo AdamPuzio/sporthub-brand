@@ -2,6 +2,7 @@ import assert from 'node:assert/strict'
 import { existsSync, readFileSync, statSync } from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { inflateSync } from 'node:zlib'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const required = [
@@ -27,6 +28,7 @@ const required = [
   'docs/asset-catalog.md',
   'docs/licensing.md',
   'preview/index.html',
+  'preview/wordmark-reversed-on-navy.png',
 ]
 
 for (const file of required) {
@@ -47,7 +49,25 @@ for (const [name, hex] of Object.entries(colors.brand)) {
   assert.ok(css.includes(`--sh-${cssName}: ${hex};`), `CSS color token does not match JSON for ${name}`)
 }
 
+function firstPixelAlpha(data, file) {
+  let offset = 8
+  let colorType = -1
+  const compressed = []
+  while (offset < data.length) {
+    const length = data.readUInt32BE(offset)
+    const type = data.subarray(offset + 4, offset + 8).toString('ascii')
+    const payload = data.subarray(offset + 8, offset + 8 + length)
+    if (type === 'IHDR') colorType = payload[9]
+    if (type === 'IDAT') compressed.push(payload)
+    offset += length + 12
+  }
+  assert.equal(colorType, 6, `${file} should be RGBA PNG to preserve transparency`)
+  const firstScanline = inflateSync(Buffer.concat(compressed))
+  return firstScanline[4]
+}
+
 const expectedPngSizes = {
+
   'exports/png/sporthub-wordmark.png': [590, 120],
   'exports/png/sporthub-wordmark@2x.png': [1180, 240],
   'exports/png/sporthub-wordmark-reversed.png': [590, 120],
@@ -66,5 +86,10 @@ for (const [file, [width, height]] of Object.entries(expectedPngSizes)) {
   assert.equal(data.readUInt32BE(20), height, `${file} height should be ${height}`)
 }
 
+for (const file of ['exports/png/sporthub-wordmark.png', 'exports/png/sporthub-wordmark-reversed.png', 'exports/png/sporthub-softball-lockup.png', 'exports/png/sh-monogram.png', 'exports/png/favicon-32.png']) {
+  const data = readFileSync(path.join(root, file))
+  assert.equal(firstPixelAlpha(data, file), 0, `${file} should have a transparent outer corner`)
+}
+
 assert.equal(existsSync(path.join(root, 'input/SportHub Brand Board.pdf')), false, 'Private source board must not be copied')
-console.log('✓ Brand board links, sources, licenses, tokens, and PNG export dimensions are present and consistent.')
+console.log('✓ Brand board links, sources, licenses, tokens, PNG dimensions, and transparent logo exports are valid.')
